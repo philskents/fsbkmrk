@@ -5,5 +5,5 @@ WORKDIR /code
 COPY ./api/requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY ./api /code/
-ENTRYPOINT ["python"]
-CMD ["api.py"]
+ENTRYPOINT ["waitress-serve"]
+CMD ["api:app"]
